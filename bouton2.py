@@ -19,7 +19,7 @@ marge = 0.5
 
 
 #calcul requis
-def beautyTest(largeur, pupils):
+def beautyPupils(largeur, pupils):
     
     perfect=0
     c= (largeur*46)/100
@@ -31,6 +31,20 @@ def beautyTest(largeur, pupils):
         print ("Vous n'avez pas les proportions requises, passez a la deuxieme etape.. sorry ") 
     print "Votre score de perfection actuel est de ",perfect, "%"
     print ("saisir la distance entre le centre de votre oeil et la queue de votre sourcil puis la hauteur de votre visage:")
+    
+    
+    def beautyEyes(eyes, hauteur):
+    
+    d=(hauteur/10)
+    
+    if (abs(eyes-d)<marge) :
+        print("perfect a pris +25%")
+        perfect = perfect+25
+    else :
+        print ("Vous n'avez pas les proportions requises, passez a la troisieme etape.. sorry" )
+    
+        print ("Votre score de perfection actuel est de ",perfect, "%")
+        print ("saisir la distance entre votre menton et le bas de votre bouche:")
 
 
 #Sert a faire la frame global
@@ -98,7 +112,8 @@ def pointeur(event):
    
     if len(distTab) == 2:
        
-        beautyTest(*distTab)
+        beautyPupils(*distTab)
+        beautyEyes(*distTab)
    
     points = []        
 
