@@ -19,7 +19,7 @@ marge = 0.5
 
 
 #calcul requis
-def beautyTest(largeur, pupils):
+def beautyPupils(largeur, pupils):
     
     perfect=0
     c= (largeur*46)/100
@@ -98,7 +98,7 @@ def pointeur(event):
    
     if len(distTab) == 2:
        
-        beautyTest(*distTab)
+        beautyPupils(*distTab)
    
     points = []        
 
