@@ -8,6 +8,7 @@ Created on Fri Mar 31 11:08:59 2017
 import  Tkinter as tk              
 from PIL import Image, ImageFont, ImageDraw, ImageTk 
 from math import *
+from Tkinter import *
 
 "VARIABLES"
 
@@ -78,7 +79,7 @@ def beautyMouth(mouth,largeurbouche):  #(description a ajouter)
         print "Vous n'avez pas les proportions requises... sorry"
         print "Votre score de perfection actuel est de ",perfect, "%","\n","\n"
     if perfect == 0:
-        print"*****FIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIN", "\n"
+        print"*****FIN", "\n"
 
 class Application(tk.Frame):  #Creation d'une frame global
     def __init__(self, master=None):
@@ -88,7 +89,7 @@ class Application(tk.Frame):  #Creation d'une frame global
         
     def createWidgets(self):  #Bouton pour quitter
 
-        self.QUIT = tk.Button(self, text="QUIT", fg="black", command=root.destroy)
+        self.QUIT = tk.Button(self, text="QUIT", fg="black",relief=RAISED, cursor="pirate", command=root.destroy)
         self.QUIT.pack()
 
 "Non fonctionnel encore"
@@ -162,12 +163,12 @@ def pointeur(event):  #Recupere les coordonnees d'un point en cliquant dessus
 
 root = tk.Tk() #Fenetre principale
 
-cadre = tk.Canvas(root, width =500, height =300, bg="light blue")
+cadre = tk.Canvas(root,relief=RAISED, cursor="tcross", width =500, height =300, bg="light blue")
 cadre.bind("<Button-1>", pointeur)
 cadre.bind("<Motion>", pointeurz)
 cadre.pack()
 
-bouton = tk.Button(root, text='Taux de perfection', command = boutonSimple)
+bouton = tk.Button(root, text='Taux de perfection',relief=RAISED, cursor="heart", command = boutonSimple)
 bouton.pack()
 
 chaine = tk.Label(root)
